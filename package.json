@@ -1,0 +1,21 @@
+{
+  "name": "erp-test-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cypress/grep": "^5.0.0",
+    "@faker-js/faker": "^10.0.0",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.5.2",
+    "cypress": "^15.2.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "dotenv": "^17.2.2",
+    "faker": "^6.6.6",
+    "playwright": "^1.55.0"
+  }
+}
