@@ -1,6 +1,6 @@
 //import { BasePage } from './BasePage.js';
 
-export class LoginPage extends BasePage {
+/*port class LoginPage extends BasePage {
   constructor(page) {
     super(page);
     this.usernameInput = '#username';
@@ -24,5 +24,23 @@ export class LoginPage extends BasePage {
 
   async getErrorMessage() {
     return await this.getText(this.errorMessage);
+  }*/
+
+//
+import { Page } from "@playwright/test";
+export default class LoginPage {
+    constructor(public page: Page) {
+
+    }
+    async EnterUserName(username: string) {
+        await this.page.locator('input[placeholder="First Name"]')
+        .fill(username);
+    }
+    async EnterPassword(password: string) {
+        await this.page.locator('input[placeholder="Password"]')
+        .fill(password);
+    }
+    async ClickOnLoginButton() {
+        await this.page.locator('').click();
+    }
   }
-}
