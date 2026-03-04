@@ -1,9 +1,14 @@
-export class BasePage {
-  constructor(page) {
-    this.page = page;
+import { Page } from "@playwright/test";
+import path from "path/win32";
+export default class BasePage {
+  constructor(public page:Page) {
+    //this.page = page;
+  }
+ ClickOnSpecialHotMenu() {
+     this.page.locator('.product-special').click();
   }
 
-  async navigate(path) {
+ /* async navigate(path) {
     await this.page.goto(path);
   }
 
@@ -33,5 +38,5 @@ export class BasePage {
 
   async isVisible(selector) {
     return await this.page.isVisible(selector);
-  }
+  }*/
 }

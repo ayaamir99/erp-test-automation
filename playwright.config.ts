@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   use: {
     //baseURL: process.env.BASE_URL || 'http://localhost:3000',
-    baseURL:'https://todo.qacart.com',
+    baseURL:'https://ecommerce-playground.lambdatest.io/index.php?route=common/home',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
