@@ -3,15 +3,15 @@ export default class RegisterPage {
     constructor(public page: Page) {
 
     }
-    async FirstName(firstname: string) {
+    async EnterFirstName(firstname: string) {
         await this.page.locator('input[placeholder="First Name"]')
         .fill(firstname);
     }
-    async LastName(lastname: string) {
+    async EnterLastName(lastname: string) {
         await this.page.locator('input[placeholder="Last Name"]')
         .fill(lastname);
     }
-    async Email(email: string) {
+    async EnterEmail(email: string) {
         await this.page.locator('input[placeholder="Email"]')
         .fill(email);
     }
@@ -33,8 +33,12 @@ export default class RegisterPage {
     async clickOnTermsAndConditions(){
         await this.page.click("");
     }
-    async ClickOnContinue() {
-        await this.page.click('');
+    async ClickContinueToRegister() {
+         await Promise.all([
+            this.page.waitForNavigation({WaitUntill: "networkidle"}),
+          ])
+           this.page.click("Continue");
+        
     }
       
 }

@@ -10,7 +10,7 @@
   "devDependencies": {
     "@cypress/grep": "^5.0.0",
     "@faker-js/faker": "^10.0.0",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.58.2",
     "@types/node": "^24.5.2",
     "cypress": "^15.2.0",
     "cypress-mochawesome-reporter": "^4.0.2",
