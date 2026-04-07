@@ -1,6 +1,6 @@
 import { expect, Page, test } from "@playwright/test";
-import RegisterPage from "../pages/RegisterPage";
-
+//import RegisterPage from "../";
+import RegisterPage from "../../pages/RegisterPage";
 test("Register test 1", async ({ page, baseURL }) => {
   const registerPage = new RegisterPage(page);
   // ${baseURL}route=account/register
