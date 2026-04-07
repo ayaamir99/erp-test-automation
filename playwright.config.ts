@@ -16,7 +16,14 @@ export default defineConfig({
   ],
   use: {
     //baseURL: process.env.BASE_URL || 'http://localhost:3000',
-    baseURL:'https://ecommerce-playground.lambdatest.io/index.php?route=common/home',
+    baseURL:'https://gdawel.app/dashboard/',
+    
+    // https://ecommerce-playground.lambdatest.io/index.php?route=common/home
+  /*    paths: {
+      "@pages/*": ["pages/*"],
+      "@tests/*": ["tests/*"],
+      "@fixtures/*": ["fixtures/*"]
+    },*/
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

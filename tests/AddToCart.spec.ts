@@ -1,12 +1,19 @@
 import { expect, Page, test } from "@playwright/test";
 //import RegisterPage from "../";
-import RegisterPage from "../../pages/RegisterPage";
-test("Register test 1", async ({ page, baseURL }) => {
+import RegisterPage from "../pages/RegisterPage";
+import { faker } from '@faker-js/faker';
+ const user = {
+  firstName: faker.person.firstName(),
+  lastName: faker.person.lastName()
+};
+
+test("@smoke Register test", async ({ page, baseURL }) => {
+ 
   const registerPage = new RegisterPage(page);
   // ${baseURL}route=account/register
-  await page.goto('https://gdawel.app/dashboard/setting/group/invoice');
-        await registerPage.EnterFirstName("John");
-        await registerPage.EnterLastName("Doe");
+  await page.goto(`${baseURL}/login`);
+        await registerPage.EnterFirstName(user.firstName);
+        await registerPage.EnterLastName(user.lastName);
         await registerPage.EnterEmail("johndoe@example.com");
         await registerPage.EnterPhoneNumber("1234567890");
         await registerPage.EnterPassword("password123");
