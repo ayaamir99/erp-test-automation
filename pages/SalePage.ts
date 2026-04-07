@@ -1,4 +1,4 @@
-import BasePage from "../pages/Base_Test";
+import BasePage from "./Base_Test";
 import { _baseTest, expect } from "@playwright/test";
 
 export default class SalesPage extends BasePage {

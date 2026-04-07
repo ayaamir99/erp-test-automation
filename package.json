@@ -17,5 +17,8 @@
     "dotenv": "^17.2.2",
     "faker": "^6.6.6",
     "playwright": "^1.55.0"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
   }
 }
