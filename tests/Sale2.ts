@@ -1,10 +1,10 @@
-import { test } from "/fixtures/authFixture";
-import { readExcel } from "/Utils/excelReader";
-import SalesPage from "@pages/SalesPage";
+import { test } from "../fixtures/authFixture";
+import { readExcel } from "../Utils/excelReader";
+import SalesPage from "../pages/SalePage";
 
 const data = readExcel("testData.xlsx", "Sheet1");
 
-for (const row of data) {
+for (const row of data as Array<{ customer: string; product: string; qty: number }>) {
   test(`Sale for ${row.customer}`, async ({ LoginPage }) => {
     const sales = new SalesPage(LoginPage);
 

@@ -1,10 +1,10 @@
 import BasePage from "./Base_Test";
-import { _baseTest, expect } from "@playwright/test";
+import { expect } from "@playwright/test";
 
 export default class SalesPage extends BasePage {
 
   async open() {
-    await this.navigate("${baseURL}/sales");
+    await this.navigate("/sales");
   }
 
   async selectCustomer(name: string) {
@@ -19,6 +19,12 @@ export default class SalesPage extends BasePage {
 
   async submit() {
     await this.click("#submit-sale");
+  }
+
+  async createSale(customer: string, product: string, qty: number) {
+    await this.selectCustomer(customer);
+    await this.addProduct(product, qty);
+    await this.submit();
   }
 
   async assertSuccess() {
