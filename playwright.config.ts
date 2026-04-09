@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   use: {
     //baseURL: process.env.BASE_URL || 'http://localhost:3000',
-    baseURL:'https://gdawel.app/dashboard/',
+    baseURL:'https://gdawel.app/',
     
     // https://ecommerce-playground.lambdatest.io/index.php?route=common/home
   /*    paths: {

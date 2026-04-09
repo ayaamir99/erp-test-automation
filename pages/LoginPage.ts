@@ -33,14 +33,15 @@ export default class LoginPage {
 
     }
     async EnterUserName(username: string) {
-        await this.page.locator('input[placeholder="First Name"]')
+        await this.page.locator('input[name="email"]')
         .fill(username);
     }
     async EnterPassword(password: string) {
-        await this.page.locator('input[placeholder="Password"]')
+        await this.page.locator('input[name="password"]')
         .fill(password);
     }
     async ClickOnLoginButton() {
-        await this.page.locator('').click();
+        await this.page.locator('button[type="submit"]')
+        .click();
     }
   }

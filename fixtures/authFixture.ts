@@ -8,8 +8,8 @@ export const test = base.extend<AuthFixtures>({
   LoginPage: async ({ page }, use) => {
     await page.goto("${baseURL}/login");
 
-    await page.fill("#email", "test@test.com");
-    await page.fill("#password", "123456");
+    await page.fill("input[name="email"]", "may@test.com");
+    await page.fill("#password", "74108520");
     await page.click("#login");
 
     await use(page);
