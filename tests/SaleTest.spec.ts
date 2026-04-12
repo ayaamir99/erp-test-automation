@@ -1,14 +1,14 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures/authFixture";
 import { SaleInvoicePage } from "../pages/SaleInvoicePage";
 
 test.describe("Sale Invoice", () => {
   let invoicePage: SaleInvoicePage;
 
-  test.beforeEach(async ({ page }) => {
-    invoicePage = new SaleInvoicePage(page);
+  test.beforeEach(async ({ LoginPage }) => {
+    invoicePage = new SaleInvoicePage(LoginPage);
   });
 
-  test("Create and confirm a sale invoice", async ({ page }) => {
+  test("Create and confirm a sale invoice", async () => {
     await invoicePage.navigate();
 
     // Fill invoice header
@@ -41,7 +41,7 @@ test.describe("Sale Invoice", () => {
     console.log(`💰 Total: ${await invoicePage.getInvoiceTotal()}`);
   });
 
-  test("Create invoice and register payment", async ({ page }) => {
+  test("Create invoice and register payment", async () => {
     await invoicePage.navigate();
 
     await invoicePage.selectCustomer("Azure Interior");
@@ -61,7 +61,7 @@ test.describe("Sale Invoice", () => {
     console.log(`✅ Invoice paid successfully`);
   });
 
-  test("Create invoice from Excel data", async ({ page }) => {
+  test("Create invoice from Excel data", async () => {
     // Example: reading invoice lines from excelReader utility
     // const data = await readExcel("fixtures/invoices.xlsx");
     // for (const row of data) { await invoicePage.addInvoiceLine(...) }
