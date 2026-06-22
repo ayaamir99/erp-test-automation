@@ -2,7 +2,11 @@
   "name": "erp-test-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:purchase": "playwright test tests/PurchaseInvoiceTest.spec.ts",
+    "report": "playwright show-report playwright-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

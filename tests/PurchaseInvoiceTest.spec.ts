@@ -1,23 +1,19 @@
 import { test, expect } from "../fixtures/authFixture";
-import { SaleInvoicePage } from "../pages/SaleInvoicePage";
+import { PurchaseInvoicePage } from "../pages/PurchaseInvoicePage";
 
-test.describe("Sale Invoice", () => {
-  let invoicePage: SaleInvoicePage;
+test.describe("Purchase Invoice", () => {
+  let invoicePage: PurchaseInvoicePage;
 
   test.beforeEach(async ({ authenticatedPage }) => {
-    invoicePage = new SaleInvoicePage(authenticatedPage);
+    invoicePage = new PurchaseInvoicePage(authenticatedPage);
   });
-  test("Create and confirm a sale invoice", async () => {
+
+  test("Create and confirm a purchase invoice", async () => {
     await invoicePage.navigate();
-        console.log(`✅ Invoice created successfully`);
-
-});
-
- /* test("Create and confirm a sale invoice", async () => {
-    await invoicePage.navigate();
-
+    console.log(`✅ Purchase invoice page loaded`);
+//
     // Fill invoice header
-    await invoicePage.selectCustomer("Azure Interior");
+    await invoicePage.selectPartner("Vendor Name"); // Replace with actual vendor
     await invoicePage.setInvoiceDate("04/08/2026");
 
     // Add product lines
@@ -40,16 +36,16 @@ test.describe("Sale Invoice", () => {
 
     // Verify invoice number is assigned
     const invoiceNumber = await invoicePage.getInvoiceNumber();
-    expect(invoiceNumber).toMatch(/INV\//);
+    expect(invoiceNumber).toMatch(/BILL\//);
 
-    console.log(`✅ Invoice created: ${invoiceNumber}`);
+    console.log(`✅ Purchase invoice created: ${invoiceNumber}`);
     console.log(`💰 Total: ${await invoicePage.getInvoiceTotal()}`);
   });
 
-  test("Create invoice and register payment", async () => {
+ /* test("Create purchase invoice and register payment", async () => {
     await invoicePage.navigate();
 
-    await invoicePage.selectCustomer("Azure Interior");
+    await invoicePage.selectPartner("Vendor Name");
     await invoicePage.setInvoiceDate("04/08/2026");
     await invoicePage.addInvoiceLine("Product A", 1, 500.0);
 
@@ -63,21 +59,6 @@ test.describe("Sale Invoice", () => {
     const paidStatus = await invoicePage.getInvoiceStatus();
     expect(paidStatus.toLowerCase()).toContain("paid");
 
-    console.log(`✅ Invoice paid successfully`);
-  });
-
-  test("Create invoice from Excel data", async () => {
-    // Example: reading invoice lines from excelReader utility
-    // const data = await readExcel("fixtures/invoices.xlsx");
-    // for (const row of data) { await invoicePage.addInvoiceLine(...) }
-
-    await invoicePage.navigate();
-    await invoicePage.selectCustomer("Azure Interior");
-    await invoicePage.setInvoiceDate("04/08/2026");
-    await invoicePage.addInvoiceLine("Product C", 3, 75.0);
-    await invoicePage.saveInvoice();
-
-    const total = await invoicePage.getInvoiceTotal();
-    expect(parseFloat(total.replace(",", ""))).toBeGreaterThan(0);
+    console.log(`✅ Purchase invoice paid successfully`);
   });*/
 });

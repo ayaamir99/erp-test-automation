@@ -1,18 +1,28 @@
 import { test as base, expect, Page } from "@playwright/test";
 
+import LoginPage from "../pages/LoginPage";
+
 type AuthFixtures = {
+  loginPage: LoginPage;
+  authenticatedPage: Page;
   LoginPage: Page;
 };
 
+const email = process.env.TEST_USER_EMAIL ?? "may@test.com";
+const password = process.env.TEST_USER_PASSWORD ?? "74108520";
+
 export const test = base.extend<AuthFixtures>({
-  LoginPage: async ({ page }, use) => {
-    await page.goto("/login");
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
 
-    await page.fill('input[name="email"]', "may@test.com");
-    await page.fill("#password", "74108520");
-    await page.click("#login");
-
+  authenticatedPage: async ({ page, loginPage }, use) => {
+    await loginPage.login(email, password);
     await use(page);
+  },
+
+  LoginPage: async ({ authenticatedPage }, use) => {
+    await use(authenticatedPage);
   },
 });
 

@@ -5,18 +5,20 @@ dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
-  fullyParallel: true,
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1,
+  maxFailures: 1,
   reporter: [
-    ['html'],
+    ['html', { outputFolder: 'playwright-report', open: 'always' }],
     ['junit', { outputFile: 'test-results/junit.xml' }],
     ['json', { outputFile: 'test-results/results.json' }]
   ],
   use: {
     //baseURL: process.env.BASE_URL || 'http://localhost:3000',
     baseURL:'https://gdawel.app/',
+    headless: false,
     
     // https://ecommerce-playground.lambdatest.io/index.php?route=common/home
   /*    paths: {
