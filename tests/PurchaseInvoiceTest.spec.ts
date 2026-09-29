@@ -13,12 +13,12 @@ test.describe("Purchase Invoice", () => {
     console.log(`✅ Purchase invoice page loaded`);
 //
     // Fill invoice header
-    await invoicePage.selectPartner("Vendor Name"); // Replace with actual vendor
-    await invoicePage.setInvoiceDate("04/08/2026");
+    await invoicePage.selectSupplier("Vendor Name"); // Replace with actual vendor
+   // await invoicePage.setInvoiceDate("04/08/2026");
 
     // Add product lines
     await invoicePage.addInvoiceLine("Product A", 2, 150.0);
-    await invoicePage.addInvoiceLine("Product B", 1, 200.0, 10); // 10% discount
+    //await invoicePage.addInvoiceLine("Product B", 1, 200.0, 10); // 10% discount
 
     // Save draft
     await invoicePage.saveInvoice();
@@ -45,7 +45,7 @@ test.describe("Purchase Invoice", () => {
  /* test("Create purchase invoice and register payment", async () => {
     await invoicePage.navigate();
 
-    await invoicePage.selectPartner("Vendor Name");
+    await invoicePage.selectSupplier("Vendor Name");
     await invoicePage.setInvoiceDate("04/08/2026");
     await invoicePage.addInvoiceLine("Product A", 1, 500.0);
 

@@ -87,6 +87,7 @@ export class BaseInvoicePage extends Base_Test {
     await this.saveBtn.click();
   }
 
+
   async confirmInvoice() {
     await this.confirmBtn.click();
     await this.page.waitForLoadState("networkidle");

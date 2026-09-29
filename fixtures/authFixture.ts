@@ -8,8 +8,8 @@ type AuthFixtures = {
   LoginPage: Page;
 };
 
-const email = process.env.TEST_USER_EMAIL ?? "may@test.com";
-const password = process.env.TEST_USER_PASSWORD ?? "74108520";
+const email = process.env.TEST_USER_EMAIL ?? "Investor@gdawel.app";
+const password = process.env.TEST_USER_PASSWORD ?? "13991399";
 
 export const test = base.extend<AuthFixtures>({
   loginPage: async ({ page }, use) => {

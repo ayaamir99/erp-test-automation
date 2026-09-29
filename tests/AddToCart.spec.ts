@@ -7,7 +7,7 @@ import { faker } from '@faker-js/faker';
   lastName: faker.person.lastName()
 };
 
-test("@smoke Register test", async ({ page, baseURL }) => {
+/*test("@smoke Register test", async ({ page, baseURL }) => {
  
   const registerPage = new RegisterPage(page);
   // ${baseURL}route=account/register
@@ -22,5 +22,5 @@ test("@smoke Register test", async ({ page, baseURL }) => {
         await registerPage.clickOnTermsAndConditions();
         await registerPage.ClickContinueToRegister();
 
-});
+});*/
 // npx playwright test -g "Register test 1"

@@ -3,7 +3,7 @@ import { Page } from "@playwright/test";
 export default class LoginPage {
   private readonly emailInput = this.page.locator('input[name="email"]');
   private readonly passwordInput = this.page.locator('input[name="password"], #password');
-  private readonly loginButton = this.page.locator('button[type="submit"], #login');
+  private readonly loginButton = this.page.locator('#kt_body > div.d-flex.flex-column.flex-root > div > div > div > div > div:nth-child(2) > div > form.m-0 > button');
   private readonly loginError = this.page.locator(
     '.alert-danger, [role="alert"], .invalid-feedback, .o_notification:has-text("Wrong login/password")'
   );

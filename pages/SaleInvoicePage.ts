@@ -7,7 +7,7 @@ export class SaleInvoicePage extends BaseInvoicePage {
   }
 
   async navigate() {
-    await this.page.goto("/odoo/accounting/customer-invoices/new");
+    await this.page.goto("/dashboard/sales/create");
   }
 
   // Legacy method name for backward compatibility

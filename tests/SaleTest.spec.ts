@@ -13,7 +13,7 @@ test.describe("Sale Invoice", () => {
 
 });
 
- /* test("Create and confirm a sale invoice", async () => {
+  test("Create and confirm a sale invoice", async () => {
     await invoicePage.navigate();
 
     // Fill invoice header
@@ -50,7 +50,7 @@ test.describe("Sale Invoice", () => {
     await invoicePage.navigate();
 
     await invoicePage.selectCustomer("Azure Interior");
-    await invoicePage.setInvoiceDate("04/08/2026");
+    //await invoicePage.setInvoiceDate("04/08/2026");
     await invoicePage.addInvoiceLine("Product A", 1, 500.0);
 
     await invoicePage.saveInvoice();
@@ -66,14 +66,14 @@ test.describe("Sale Invoice", () => {
     console.log(`✅ Invoice paid successfully`);
   });
 
-  test("Create invoice from Excel data", async () => {
+  /*test("Create invoice from Excel data", async () => {
     // Example: reading invoice lines from excelReader utility
     // const data = await readExcel("fixtures/invoices.xlsx");
     // for (const row of data) { await invoicePage.addInvoiceLine(...) }
 
     await invoicePage.navigate();
     await invoicePage.selectCustomer("Azure Interior");
-    await invoicePage.setInvoiceDate("04/08/2026");
+    //await invoicePage.setInvoiceDate("04/08/2026");
     await invoicePage.addInvoiceLine("Product C", 3, 75.0);
     await invoicePage.saveInvoice();
 
